@@ -12,7 +12,8 @@ This project is only a playground for my PHPUnit and advanced techniques for PHP
 
 ### ToDo
 
-* implement dificulty system
-* implement point system
+* implement difficulty
+* implement points
+* implement users
 
 * Frontend
