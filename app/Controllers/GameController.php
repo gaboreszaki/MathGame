@@ -28,7 +28,15 @@ class GameController {
 
     public function startGame() {
 
+        ////
         $this_game = $this->setupGame();
+
+        /* The Game operation
+         *
+         *          Basicly Generate the whole thing in one step -> SetupGame
+         *          split the equlalision to parts (spoiler: $the_question , $the_answer)
+         *
+         */
 
         ///pick a random thing to hide:
         $selected_part_num = array_rand(self::$equationList, 1);
@@ -37,10 +45,13 @@ class GameController {
 
 
         ///make anwser to human visible
-        if(in_array($this_game["$selected_part"], self::$operationsList)){
-            $str =  $this_game["$selected_part"];
-           $this->the_answer = trim($this->converseOperation($str));
-        }else{$this->the_answer = $this_game["$selected_part"];}
+        if (in_array($this_game["$selected_part"], self::$operationsList)) {
+            $str = $this_game["$selected_part"];
+            $this->the_answer = trim($this->converseOperation($str));
+        }
+        else {
+            $this->the_answer = $this_game["$selected_part"];
+        }
 
 
         //print_r($this->the_answer);
@@ -51,7 +62,7 @@ class GameController {
 
 
 
-        return $this;
+        return TRUE;
     }
 
     public function setupGame() {
@@ -121,7 +132,6 @@ class GameController {
         );
 
         return $dataMatrix;
-
     }
 
     public function setDefaults() {

@@ -18,7 +18,7 @@ $instance = new App\Controllers\GameController;
 
 $new_game = $instance->startGame();
 $the_question = $new_game->show_the_question();
-$the_answer = $new_game->getAnswer()
+$the_answer = $new_game->getAnswer();
 
 ```
 

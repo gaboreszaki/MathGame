@@ -11,35 +11,38 @@
  *
  * @author mrgab
  */
-class gameControllerTest  extends \PHPUnit_Framework_TestCase{
+class gameControllerTest extends \PHPUnit_Framework_TestCase {
 
-    public function testGameControllerToSetupDefault() {
+    public function testGameControllerParams() {
+
+        $this->assertClassHasAttribute('the_answer', App\Controllers\GameController::class);
+        $this->assertClassHasAttribute('the_question', App\Controllers\GameController::class);
+        $this->assertClassHasAttribute('param_two', App\Controllers\GameController::class);
+        $this->assertClassHasAttribute('min_num', App\Controllers\GameController::class);
+        $this->assertClassHasAttribute('max_num', App\Controllers\GameController::class);
+        $this->assertClassHasAttribute('operation', App\Controllers\GameController::class);
+
+        $this->assertClassHasStaticAttribute('operationsList', App\Controllers\GameController::class);
+        $this->assertClassHasStaticAttribute('equationList', App\Controllers\GameController::class);
+    }
+
+    public function testGameSetupDataMatrix() {
 
         $this_instance = new App\Controllers\GameController;
 
-        $this_instance->setDefaults();
+        $this_game = $this_instance->setupGame();
 
-        $the_composed_game = $this_instance->compose_the_game();
+        //// equalision parts    a  +  b  =  c
+        /////                             1  2  3  4  5
 
-
-        $this->assertArrayHasKey('One', $the_composed_game);
-        $this->assertArrayHasKey('Two', $the_composed_game);
-        $this->assertArrayHasKey('Ope', $the_composed_game);
-        $this->assertArrayHasKey('Fin', $the_composed_game);
-
-
-
+        $this->assertArrayHasKey('One', $this_game);          /// 1 -> One
+        $this->assertArrayHasKey('Two', $this_game);        /// 3 -> Two
+        $this->assertArrayHasKey('Ope', $this_game);         /// 2 -> Ope
+        $this->assertArrayHasKey('Fin', $this_game);        /// 5 -> Fin
     }
 
-
-public function testGameStartup(){
-
-    $this_instance = new App\Controllers\GameController;
-
-    $this_game =$this_instance->startGame();
-
-    $this->assertClassHasStaticAttribute('operationsList', App\Controllers\GameController::class);
-
-}
-
+    public function testGameStart() {
+        $this_instance = new App\Controllers\GameController;
+        $this->assertTrue($this_instance->startGame());
+    }
 }
