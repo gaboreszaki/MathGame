@@ -186,7 +186,7 @@ class GameController {
         switch ($this->this_game_difficulty) {
             case "medium":
                 $this->min_num = 1;
-                $this->max_num = 100;
+                $this->max_num = 10;
                 $this->param_one = $this->genRandom();
                 $this->param_two = $this->genRandom();
 
@@ -195,8 +195,8 @@ class GameController {
                 return $this;
 
             case "hard":
-                $this->min_num = 100;
-                $this->max_num = 999;
+                $this->min_num = 10;
+                $this->max_num = 100;
                 $this->param_one = $this->genRandom();
                 $this->param_two = $this->genRandom();
 
@@ -204,7 +204,7 @@ class GameController {
 
                 return $this;
             case "nerd":
-                $this->min_num = 1000;
+                $this->min_num = 100;
                 $this->max_num = 9999;
                 $this->param_one = $this->genRandom();
                 $this->param_two = $this->genRandom();

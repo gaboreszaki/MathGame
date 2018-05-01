@@ -2,36 +2,70 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/119da431f9af43c2b6ba9740d6f8756f)](https://app.codacy.com/app/gaboreszaki/CalulatorGame?utm_source=github.com&utm_medium=referral&utm_content=gaboreszaki/CalulatorGame&utm_campaign=badger)
 
-This project is only a playground for my PHPUnit and advanced techniques for PHP7.1
+## What is this project:
+This is a small game for mostly practice TDD and advanced PHP 7 techniques.
 
-working demo: https://game.northweb.co.uk/
+The game can generate infinite amount of basic math question and the matching answer, with customisable difficulty.
+
+**[Working demo](https://game.northweb.co.uk/)**
 
 To run this app you need to run a ` composer dump-autoload `
 
 
 ### Current Features:
 
-* start the game
-    - get the questions
-    - get the answer
-
-#### Example:
-
-```
-
-$instance = new App\Controllers\GameController;
-
-$new_game = $instance->startGame();
-$the_question = $new_game->show_the_question();
-$the_answer = $new_game->getAnswer();
-
-```
-
+* 5 difficulty level
+* 4 math operation support
+* infinite amount of basic math question
 
 ### ToDo
 
-* implement difficulty
-* implement points
-* implement users
+- [x] implement difficulty
+- [ ] implement points
+- [ ] implement users
+- [x] Frontend - Started
+- [ ] Frontend - Finished
 
-* Frontend
+### Difficulties :
+
+#### "easy":                        //default
+- min_num = 1;
+- max_num = 5;
+- operations available: + -
+
+#### "medium":
+- min_num = 1;
+- max_num = 10;
+- operations available: * /
+
+#### "hard":
+- min_num = 10;
+- max_num = 100;
+- operations available: + - * /
+
+#### "nerd":
+- min_num = 100;
+- max_num = 9999;
+- operations available: + - * /
+
+#### "ultra":
+- min_num = 99999;
+- max_num = 9999999;
+- operations available: + - * /
+
+
+#### Example:
+
+
+```
+
+    $new_game = new App\Controllers\GameController;
+
+    $new_game->setGameDificulty("medium");      // optional - see difficulties
+    $new_game->startGame();
+
+
+    $the_question = $new_game->show_the_question();
+    $the_answer = $new_game->getAnswer();
+
+```
