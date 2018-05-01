@@ -30,8 +30,8 @@ $the_answer = $new_game->getAnswer();
 
 ### ToDo
 
-* implement difficulty
-* implement points
-* implement users
+- [x] implement difficulty
+- [ ] implement points
+- [ ]implement users
 
-* Frontend
+- [x ] Frontend - Started
