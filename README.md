@@ -34,26 +34,7 @@ To run this app you need to run a ` composer dump-autoload `
 - [x] Frontend - Started
 - [ ] Frontend - Finished
 
-
-#### Example:
-
-```
-
-$instance = new App\Controllers\GameController;
-
-$new_game = $instance->startGame();
-$the_question = $new_game->show_the_question();
-$the_answer = $new_game->getAnswer();
-
-```
-
 ### Difficulties :
-###### "easy", "medium", "hard", "nerd", "ultra"
-
-#### Example to set difficulty:
-```
-$new_game->setGameDificulty("newDiff");
-```
 
 #### "easy":                        //default
 - min_num = 1;
@@ -79,3 +60,20 @@ $new_game->setGameDificulty("newDiff");
 - min_num = 99999;
 - max_num = 9999999;
 - operations available: + - * /
+
+
+#### Example:
+
+
+```
+
+$instance = new App\Controllers\GameController;
+
+    $new_game->setGameDificulty("medium");      *// optional - see difficulties*
+    $new_game = $instance->startGame();
+
+
+    $the_question = $new_game->show_the_question();
+    $the_answer = $new_game->getAnswer();
+
+```
