@@ -14,17 +14,9 @@ To run this app you need to run a ` composer dump-autoload `
 
 ### Current Features:
 
-* available difficulties
-    - easy [min 1]
-    - medium
-    - hard
-    - nerd
-    - ultra
-
-* start the game
-    - get the questions
-    - get the answer
-
+* 5 difficulty level
+* 4 math operations support
+infinite amount of basic math question
 
 ### ToDo
 
