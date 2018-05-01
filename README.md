@@ -50,9 +50,10 @@ $the_answer = $new_game->getAnswer();
 ### Difficulties :
 
 #### setDifficulty
-```
-$new_game->setGameDificulty("newDiff");     // "easy", "medium", "hard", "nerd", "ultra"
 
+Available Options: "easy", "medium", "hard", "nerd", "ultra"
+```
+$new_game->setGameDificulty("newDiff");
 ```
 
 
