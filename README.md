@@ -59,10 +59,10 @@ To run this app you need to run a ` composer dump-autoload `
 
 ```
 
-$instance = new App\Controllers\GameController;
+    $new_game = new App\Controllers\GameController;
 
-    $new_game->setGameDificulty("medium");      *// optional - see difficulties*
-    $new_game = $instance->startGame();
+    $new_game->setGameDificulty("medium");      // optional - see difficulties
+    $new_game->startGame();
 
 
     $the_question = $new_game->show_the_question();
