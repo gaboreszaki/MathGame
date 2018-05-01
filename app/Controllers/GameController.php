@@ -22,7 +22,9 @@ class GameController {
     private $min_num;
     private $max_num;
     private $operation;
-    public static $operationsList = array("CalcAdd", "CalcDiv", "CalcMul", "CalcSub");
+    private $this_game_difficulty;
+    public $availableDificultyLevels = array("easy", "medium", "hard", "nerd", "ultra");
+    public static $operationsList = array("CalcAdd", "CalcSub", "CalcDiv", "CalcMul");
     private static $equationList = array("One", "Two", "Ope");
     private static $show_original_equation = FALSE;
 
@@ -48,8 +50,7 @@ class GameController {
         if (in_array($this_game["$selected_part"], self::$operationsList)) {
             $str = $this_game["$selected_part"];
             $this->the_answer = trim($this->converseOperation($str));
-        }
-        else {
+        } else {
             $this->the_answer = $this_game["$selected_part"];
         }
 
@@ -57,7 +58,7 @@ class GameController {
         //print_r($this->the_answer);
         $the_other_parts = $this_game;
 
-        $the_other_parts["$selected_part"] = "x";
+        $the_other_parts["$selected_part"] = "<span class=\"text-primary\">Y</span>";
         $this->the_question = $the_other_parts;
 
 
@@ -65,7 +66,23 @@ class GameController {
         return TRUE;
     }
 
+    public function setGameDificulty(string $newDif) {
+
+        $clear_dif = trim($newDif);
+
+        if (in_array($clear_dif, $this->availableDificultyLevels)) {
+            $this->this_game_difficulty = $clear_dif;
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+    public function getGameDificulty() {
+        return $this->this_game_difficulty;
+    }
+
     public function setupGame() {
+
         $this->setDefaults();
         $this_game = (array) $this->compose_the_game();
         return $this_game;
@@ -81,8 +98,34 @@ class GameController {
 
     public function genOperation() {
 
-        $the_operation = array_rand(self::$operationsList);
-        return (string) self::$operationsList[$the_operation];
+
+
+
+
+
+        switch ($this->this_game_difficulty) {
+            case "easy":
+                $min = 0;
+                $max = 1;
+                break;
+            case "medium":
+                $min = 2;
+                $max = 3;
+                break;
+            default:
+                $min = 0;
+                $max = 3;
+                break;
+
+        }
+
+            $my_rand_operation_pick = rand($min, $max);
+            return (string) self::$operationsList[$my_rand_operation_pick];
+
+
+
+
+
     }
 
     public function converseOperation(string $var) {
@@ -136,15 +179,61 @@ class GameController {
 
     public function setDefaults() {
 
-        $this->min_num = 1;
-        $this->max_num = 20;
 
-        $this->param_one = $this->genRandom();
-        $this->param_two = $this->genRandom();
 
-        $this->operation = $this->genOperation();
 
-        return $this;
+
+        switch ($this->this_game_difficulty) {
+            case "medium":
+                $this->min_num = 1;
+                $this->max_num = 100;
+                $this->param_one = $this->genRandom();
+                $this->param_two = $this->genRandom();
+
+                $this->operation = $this->genOperation();
+
+                return $this;
+
+            case "hard":
+                $this->min_num = 100;
+                $this->max_num = 999;
+                $this->param_one = $this->genRandom();
+                $this->param_two = $this->genRandom();
+
+                $this->operation = $this->genOperation();
+
+                return $this;
+            case "nerd":
+                $this->min_num = 1000;
+                $this->max_num = 9999;
+                $this->param_one = $this->genRandom();
+                $this->param_two = $this->genRandom();
+
+                $this->operation = $this->genOperation();
+
+                return $this;
+
+            case "ultra":
+                $this->min_num = 99999;
+                $this->max_num = 9999999;
+                $this->param_one = $this->genRandom();
+                $this->param_two = $this->genRandom();
+
+                $this->operation = $this->genOperation();
+
+                return $this;
+
+
+            default:
+                $this->min_num = 1;
+                $this->max_num = 5;
+                $this->param_one = $this->genRandom();
+                $this->param_two = $this->genRandom();
+
+                $this->operation = $this->genOperation();
+
+                return $this;
+        }
     }
 
     public function show_the_question() {

@@ -18,10 +18,10 @@ class gameDificultyTest extends \PHPUnit_Framework_TestCase {
     public function testDifArray() {
 
         //// i want to get back an array
-        $this_instance = new App\Controllers\GameDificulty;
-        $dif_array = $this_instance->getGameAvailableDificulty();
+        $this_instance = new App\Controllers\GameController;
+        $dif_array = $this_instance->availableDificultyLevels;
 
-        $this->assertCount(4, $dif_array);
+        $this->assertCount(5, $dif_array);
         $this->assertContainsOnly( "string", $dif_array);
 
 
@@ -33,7 +33,7 @@ class gameDificultyTest extends \PHPUnit_Framework_TestCase {
         /** @depends testDifArray */
         public function testGameCanSetDificulty() {
 
-        $this_instance = new App\Controllers\GameDificulty;
+        $this_instance = new App\Controllers\GameController;
 
         //// TRUE tests
         $this->assertTrue($this_instance->setGameDificulty('easy'));
@@ -48,10 +48,14 @@ class gameDificultyTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($this_instance->setGameDificulty('nerd'));
         $this->assertEquals($this_instance->getGameDificulty(), 'nerd');
 
+        $this->assertTrue($this_instance->setGameDificulty('ultra'));
+        $this->assertEquals($this_instance->getGameDificulty(), 'ultra');
+
 
         ///// FAIL TESTS
         $this->assertFalse($this_instance->setGameDificulty('sadasda'));
         $this->assertFalse($this_instance->setGameDificulty('sada saaaasda'));
+        $this->assertFalse($this_instance->setGameDificulty('ULTRA'));
 
 
 
