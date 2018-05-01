@@ -2,7 +2,9 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/119da431f9af43c2b6ba9740d6f8756f)](https://app.codacy.com/app/gaboreszaki/CalulatorGame?utm_source=github.com&utm_medium=referral&utm_content=gaboreszaki/CalulatorGame&utm_campaign=badger)
 
-This project is only a playground for my PHPUnit and advanced techniques for PHP7.1
+## What is this project:
+This is a small game for mostly practice TTD and advanced PHP 7 teqniques.
+also this game can generate infinite basic math questions and the matching answer, with costumisable difficulty
 
 **working demo: https://game.northweb.co.uk/**
 
