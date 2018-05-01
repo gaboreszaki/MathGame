@@ -32,6 +32,6 @@ $the_answer = $new_game->getAnswer();
 
 - [x] implement difficulty
 - [ ] implement points
-- [ ]implement users
-
-- [x ] Frontend - Started
+- [ ] implement users
+- [x] Frontend - Started
+- [ ] Frontend - Finished
