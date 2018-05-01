@@ -15,8 +15,8 @@ To run this app you need to run a ` composer dump-autoload `
 ### Current Features:
 
 * 5 difficulty level
-* 4 math operations support
-infinite amount of basic math question
+* 4 math operation support
+* infinite amount of basic math question
 
 ### ToDo
 
