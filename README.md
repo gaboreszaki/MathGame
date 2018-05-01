@@ -48,14 +48,12 @@ $the_answer = $new_game->getAnswer();
 ```
 
 ### Difficulties :
+###### "easy", "medium", "hard", "nerd", "ultra"
 
-#### setDifficulty
-
-Available Options: "easy", "medium", "hard", "nerd", "ultra"
+#### Example to set difficulty:
 ```
 $new_game->setGameDificulty("newDiff");
 ```
-
 
 #### "easy":                        //default
 - min_num = 1;
