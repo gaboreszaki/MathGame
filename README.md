@@ -6,7 +6,7 @@
 This is a small game for mostly practice TTD and advanced PHP 7 techniques.
 The game can generate infinite amount of basic math question and the matching answer, with customisable difficulty.
 
-**working demo: https://game.northweb.co.uk/**
+**[working demo](https://game.northweb.co.uk/)**
 
 To run this app you need to run a ` composer dump-autoload `
 
