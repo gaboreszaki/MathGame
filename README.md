@@ -45,7 +45,7 @@ $the_answer = $new_game->getAnswer();
 ```
 
 ### Difficulties :
-#### default (easy):
+#### "easy":                        //default
 - min_num = 1;
 - max_num = 5;
 - operations available: + -
