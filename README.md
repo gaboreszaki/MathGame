@@ -61,7 +61,7 @@ To run this app you need to run a ` composer dump-autoload `
 
 $instance = new App\Controllers\GameController;
 
-    $new_game->setGameDificulty("medium");      *// optional - see difficulties*
+    $new_game->setGameDificulty("medium");      // optional - see difficulties
     $new_game = $instance->startGame();
 
 
