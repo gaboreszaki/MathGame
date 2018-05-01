@@ -4,9 +4,10 @@
 
 ## What is this project:
 This is a small game for mostly practice TTD and advanced PHP 7 techniques.
+
 The game can generate infinite amount of basic math question and the matching answer, with customisable difficulty.
 
-**[working demo](https://game.northweb.co.uk/)**
+**[Working demo](https://game.northweb.co.uk/)**
 
 To run this app you need to run a ` composer dump-autoload `
 
@@ -47,6 +48,14 @@ $the_answer = $new_game->getAnswer();
 ```
 
 ### Difficulties :
+
+#### setDifficulty
+```
+$new_game->setGameDificulty("newDiff");     // "easy", "medium", "hard", "nerd", "ultra"
+
+```
+
+
 #### "easy":                        //default
 - min_num = 1;
 - max_num = 5;
