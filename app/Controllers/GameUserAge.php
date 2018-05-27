@@ -19,8 +19,7 @@ class GameUserAge {
         if ($param > 0 && $param < 99 && is_int($param) && filter_var($param, FILTER_VALIDATE_FLOAT)) {
             $this->UserAge = $param;
             return TRUE;
-        }
-        else {
+        } else {
             return FALSE;
         }
     }
