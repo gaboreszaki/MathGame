@@ -17,26 +17,21 @@ class GameCalculator {
     protected $result;
     protected $operation;
 
-    public function setOperation( OperatorInterface $operation) {
+    public function setOperation(OperatorInterface $operation) {
         $this->operation = $operation;
         return $this;
     }
 
-    public function calculation( ) {
-
-
-        foreach (func_get_args() as $number) {
-
-
+    public function calculation() {
+    foreach (func_get_args() as $number) {
             if (is_int($number)) {
                 $this->result = $this->operation->run($number, $this->result);
-            }            else {
+            } else {
                $error = 'Number test fail, please advise      -  THIS IS NOT INT -';
                 throw new Exception($error);
             }
         }
-
-        return $this;
+    return $this;
     }
 
     public function getResult() {
