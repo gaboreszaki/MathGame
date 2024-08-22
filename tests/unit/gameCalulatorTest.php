@@ -11,7 +11,7 @@
  *
  * @author mrgab
  */
-class gameCalulatorTest extends \PHPUnit_Framework_TestCase{
+class gameCalulatorTest extends PHPUnit\Framework\TestCase{
 
 
     public function testGameCalculatorAssertFailForRequestEmptyResults() {

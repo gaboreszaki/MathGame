@@ -1,6 +1,5 @@
 # MathGame
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/119da431f9af43c2b6ba9740d6f8756f)](https://app.codacy.com/app/gaboreszaki/CalulatorGame?utm_source=github.com&utm_medium=referral&utm_content=gaboreszaki/CalulatorGame&utm_campaign=badger)
 
 ## What is this project:
 This is a small game for mostly practice TDD and advanced PHP 7 techniques.
