@@ -11,19 +11,21 @@
  *
  * @author mrgab
  */
-class gameControllerTest extends \PHPUnit_Framework_TestCase {
+class gameControllerTest extends PHPUnit\Framework\TestCase {
 
     public function testGameControllerParams() {
 
-        $this->assertClassHasAttribute('the_answer', App\Controllers\GameController::class);
-        $this->assertClassHasAttribute('the_question', App\Controllers\GameController::class);
-        $this->assertClassHasAttribute('param_two', App\Controllers\GameController::class);
-        $this->assertClassHasAttribute('min_num', App\Controllers\GameController::class);
-        $this->assertClassHasAttribute('max_num', App\Controllers\GameController::class);
-        $this->assertClassHasAttribute('operation', App\Controllers\GameController::class);
+        $gameController = new App\Controllers\GameController();
 
-        $this->assertClassHasStaticAttribute('operationsList', App\Controllers\GameController::class);
-        $this->assertClassHasStaticAttribute('equationList', App\Controllers\GameController::class);
+        $this->assertObjectHasProperty('the_answer', $gameController);
+        $this->assertObjectHasProperty('the_question', $gameController);
+        $this->assertObjectHasProperty('param_two', $gameController);
+        $this->assertObjectHasProperty('min_num', $gameController);
+        $this->assertObjectHasProperty('max_num', $gameController);
+        $this->assertObjectHasProperty('operation', $gameController);
+
+        $this->assertObjectHasProperty('operationsList',$gameController);
+        $this->assertObjectHasProperty('equationList', $gameController);
     }
 
     public function testGameSetupDataMatrix() {
@@ -32,7 +34,7 @@ class gameControllerTest extends \PHPUnit_Framework_TestCase {
 
         $this_game = $this_instance->setupGame();
 
-        //// equalision parts    a  +  b  =  c
+        //// equalisation parts    a  +  b  =  c
         /////                             1  2  3  4  5
 
         $this->assertArrayHasKey('One', $this_game);          /// 1 -> One

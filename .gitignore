@@ -1,5 +1,8 @@
-
+.idea/*
+.idea
 vendor/*
 nbproject/*
 
 index.php
+/.phpunit.result.cache
+/.phpunit.cache/

@@ -11,7 +11,7 @@
  *
  * @author mrgab
  */
-class gameDificultyTest extends \PHPUnit_Framework_TestCase {
+class gameDificultyTest extends PHPUnit\Framework\TestCase {
 
 
 
@@ -19,10 +19,10 @@ class gameDificultyTest extends \PHPUnit_Framework_TestCase {
 
         //// i want to get back an array
         $this_instance = new App\Controllers\GameController;
-        $dif_array = $this_instance->availableDificultyLevels;
+        $difficulty = $this_instance->availableDificultyLevels;
 
-        $this->assertCount(5, $dif_array);
-        $this->assertContainsOnly( "string", $dif_array);
+        $this->assertCount(5, $difficulty);
+        $this->assertContainsOnly( 'string', $difficulty);
 
 
 

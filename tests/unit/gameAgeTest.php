@@ -11,7 +11,7 @@
  *
  * @author mrgab
  */
-class gameAgeTest extends \PHPUnit_Framework_TestCase{
+class gameAgeTest extends PHPUnit\Framework\TestCase {
 
 
     public function testAssertEmptyAge() {
