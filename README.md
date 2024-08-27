@@ -1,14 +1,18 @@
-# MathGame
-
+# MathGame 2.0
+## 2.0 Update
+- New interface
+- New Game mechanics
+- php 8.3 support
+- New Game controllers
 
 ## What is this project:
 This is a small game for mostly practice TDD and advanced PHP 7 techniques.
 
 The game can generate infinite amount of basic math question and the matching answer, with customisable difficulty.
 
-**[Working demo](https://game.northweb.co.uk/)**
+**[Working demo](https://math-game.northweb.dev/)**
 
-To run this app you need to run a ` composer dump-autoload `
+To run this app you need to run a ` composer install `
 
 
 ### Current Features:
@@ -17,13 +21,6 @@ To run this app you need to run a ` composer dump-autoload `
 * 4 math operation support
 * infinite amount of basic math question
 
-### ToDo
-
-- [x] implement difficulty
-- [ ] implement points
-- [ ] implement users
-- [x] Frontend - Started
-- [ ] Frontend - Finished
 
 ### Difficulties :
 

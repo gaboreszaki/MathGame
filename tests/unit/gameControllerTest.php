@@ -15,7 +15,7 @@ class gameControllerTest extends PHPUnit\Framework\TestCase {
 
     public function testGameControllerParams() {
 
-        $gameController = new App\Controllers\GameController();
+        $gameController = new \App\Controllers\OldGameControllers\GameController();
 
         $this->assertObjectHasProperty('the_answer', $gameController);
         $this->assertObjectHasProperty('the_question', $gameController);
@@ -30,7 +30,7 @@ class gameControllerTest extends PHPUnit\Framework\TestCase {
 
     public function testGameSetupDataMatrix() {
 
-        $this_instance = new App\Controllers\GameController;
+        $this_instance = new \App\Controllers\OldGameControllers\GameController;
 
         $this_game = $this_instance->setupGame();
 
@@ -44,7 +44,7 @@ class gameControllerTest extends PHPUnit\Framework\TestCase {
     }
 
     public function testGameStart() {
-        $this_instance = new App\Controllers\GameController;
+        $this_instance = new \App\Controllers\OldGameControllers\GameController;
         $this->assertTrue($this_instance->startGame());
     }
 }

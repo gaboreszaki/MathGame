@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace App\Controllers;
+namespace App\Controllers\Operators;
 
 /**
  * Description of CalcMul
