@@ -3,6 +3,8 @@
 vendor/*
 nbproject/*
 
-index.php
+
 /.phpunit.result.cache
 /.phpunit.cache/
+
+/src/assets/css

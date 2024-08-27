@@ -6,16 +6,16 @@
  * and open the template in the editor.
  */
 
-namespace App\Controllers;
+namespace App\Controllers\Operators;
 
 /**
- * Description of CalcDiv
+ * Description of CalcAdd
  *
  * @author mrgab
  */
-class CalcDiv implements \App\Interfaces\OperatorInterface{
+class CalcAdd implements \App\Interfaces\OperatorInterface {
 
     public function run($number, $result) {
-        return $result / $number;
+        return $result + $number;
     }
 }

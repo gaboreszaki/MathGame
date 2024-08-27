@@ -16,7 +16,7 @@ class gameCalulatorTest extends PHPUnit\Framework\TestCase{
 
     public function testGameCalculatorAssertFailForRequestEmptyResults() {
 
-        $this_instance = new App\Controllers\GameCalculator;
+        $this_instance = new \App\Controllers\OldGameControllers\GameCalculator;
 
         $getRes = $this_instance->getResult();
         $this->assertEmpty($getRes);
@@ -26,9 +26,9 @@ class gameCalulatorTest extends PHPUnit\Framework\TestCase{
 
         public function testGameCalculatorToAdd() {
 
-        $this_instance = new App\Controllers\GameCalculator;
+        $this_instance = new \App\Controllers\OldGameControllers\GameCalculator;
 
-        $this_instance->setOperation(new App\Controllers\CalcAdd);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcAdd);
         $this_instance->calculation(2,2,2);
         $result = $this_instance->getResult();
 
@@ -40,12 +40,12 @@ class gameCalulatorTest extends PHPUnit\Framework\TestCase{
     }
         public function testGameCalculatorToSubstruct() {
 
-        $this_instance = new App\Controllers\GameCalculator;
+        $this_instance = new \App\Controllers\OldGameControllers\GameCalculator;
 
-        $this_instance->setOperation(new App\Controllers\CalcAdd);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcAdd);
         $this_instance->calculation(10);
 
-        $this_instance->setOperation(new App\Controllers\CalcSub);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcSub);
         $this_instance->calculation(5);
         $result = $this_instance->getResult();
 
@@ -55,12 +55,12 @@ class gameCalulatorTest extends PHPUnit\Framework\TestCase{
 
         public function testGameCalculatorToDivine() {
 
-        $this_instance = new App\Controllers\GameCalculator;
+        $this_instance = new \App\Controllers\OldGameControllers\GameCalculator;
 
-        $this_instance->setOperation(new App\Controllers\CalcAdd);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcAdd);
         $this_instance->calculation(10);
 
-        $this_instance->setOperation(new App\Controllers\CalcDiv);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcDiv);
         $this_instance->calculation(5);
         $result = $this_instance->getResult();
 
@@ -69,12 +69,12 @@ class gameCalulatorTest extends PHPUnit\Framework\TestCase{
     }
         public function testGameCalculatorToMultiply() {
 
-        $this_instance = new App\Controllers\GameCalculator;
+        $this_instance = new \App\Controllers\OldGameControllers\GameCalculator;
 
-        $this_instance->setOperation(new App\Controllers\CalcAdd);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcAdd);
         $this_instance->calculation(10);
 
-        $this_instance->setOperation(new App\Controllers\CalcMul);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcMul);
         $this_instance->calculation(5);
         $result = $this_instance->getResult();
 
@@ -85,24 +85,24 @@ class gameCalulatorTest extends PHPUnit\Framework\TestCase{
 
         public function testGameCalculatorAllTogeather() {
 
-        $this_instance = new App\Controllers\GameCalculator;
+        $this_instance = new \App\Controllers\OldGameControllers\GameCalculator;
 
-        $this_instance->setOperation(new App\Controllers\CalcAdd);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcAdd);
         $this_instance->calculation(10);
 
-        $this_instance->setOperation(new App\Controllers\CalcMul);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcMul);
         $this_instance->calculation(5);
 
-        $this_instance->setOperation(new App\Controllers\CalcAdd);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcAdd);
         $this_instance->calculation(10, 20);
 
-        $this_instance->setOperation(new App\Controllers\CalcDiv);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcDiv);
         $this_instance->calculation(2);
 
-        $this_instance->setOperation(new App\Controllers\CalcSub);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcSub);
         $this_instance->calculation(20);
 
-        $this_instance->setOperation(new App\Controllers\CalcMul);
+        $this_instance->setOperation(new \App\Controllers\Operators\CalcMul);
         $this_instance->calculation(10, 10);
 
         $result = $this_instance->getResult();

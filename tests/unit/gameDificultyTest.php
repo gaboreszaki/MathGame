@@ -18,7 +18,7 @@ class gameDificultyTest extends PHPUnit\Framework\TestCase {
     public function testDifArray() {
 
         //// i want to get back an array
-        $this_instance = new App\Controllers\GameController;
+        $this_instance = new \App\Controllers\OldGameControllers\GameController;
         $difficulty = $this_instance->availableDificultyLevels;
 
         $this->assertCount(5, $difficulty);
@@ -33,7 +33,7 @@ class gameDificultyTest extends PHPUnit\Framework\TestCase {
         /** @depends testDifArray */
         public function testGameCanSetDificulty() {
 
-        $this_instance = new App\Controllers\GameController;
+        $this_instance = new \App\Controllers\OldGameControllers\GameController;
 
         //// TRUE tests
         $this->assertTrue($this_instance->setGameDificulty('easy'));

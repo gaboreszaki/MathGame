@@ -15,14 +15,14 @@ class gameAgeTest extends PHPUnit\Framework\TestCase {
 
 
     public function testAssertEmptyAge() {
-        $this_instance = new App\Controllers\GameUserAge;
+        $this_instance = new \App\Controllers\OldGameControllers\GameUserAge;
 
         $this->assertEmpty($this_instance->getUserAge());
     }
 
     public function testSetAgeAssertTrue() {
 
-        $this_instance = new App\Controllers\GameUserAge;
+        $this_instance = new \App\Controllers\OldGameControllers\GameUserAge;
 
 
         $this->assertTrue($this_instance->setUserAge(14));
@@ -33,7 +33,7 @@ class gameAgeTest extends PHPUnit\Framework\TestCase {
 
         public function testSetAgeAssertFalse() {
 
-        $this_instance = new App\Controllers\GameUserAge;
+        $this_instance = new \App\Controllers\OldGameControllers\GameUserAge;
 
         $this->assertFalse($this_instance->setUserAge(-20));
 
