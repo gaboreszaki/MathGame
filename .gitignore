@@ -2,6 +2,7 @@
 .idea
 vendor/*
 nbproject/*
+node_modules/*
 
 
 /.phpunit.result.cache
